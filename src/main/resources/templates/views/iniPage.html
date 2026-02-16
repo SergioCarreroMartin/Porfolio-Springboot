@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:replace="~{fragments/head :: head_links}"></div>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <main class="container flex-fill py-5 d-flex justify-content-center">
+        <div class="sheet-container shadow-sm p-4 p-md-5 bg-white rounded-4 border"
+            style="max-width: 900px; width: 100%;">
+
+            <div class="row align-items-center">
+                <div class="col-12">
+                    <h1 class="display-4 fw-bold mb-3" style="color: var(--primary-gray);">
+                        Hola, soy <span style="border-bottom: 3px solid var(--primary-gray);">Sergio</span>.
+                    </h1>
+                    <h2 class="h3 text-muted mb-4 fw-light">Desarrollador Java con Spring Boot</h2>
+
+                    <div class="fs-5 text-secondary lh-base mb-5">
+                        <p>
+                            Soy un desarrollador enfocado en construir soluciones robustas y escalables desde el lado
+                            del servidor.
+                            Me apasiona la arquitectura de software, la limpieza del código y cómo la tecnología puede
+                            resolver problemas reales.
+                        </p>
+                        <p>
+                            Actualmente, busco activamente mi primera incursión en el sector tecnológico, ya sea a
+                            través de
+                            un rol <strong>Junior</strong> o mediante <strong>convenios de prácticas y becas</strong>.
+                            Tengo
+                            una gran capacidad de adaptación, ganas de afrontar retos técnicos y una mentalidad
+                            orientada al
+                            aprendizaje continuo.
+                        </p>
+                    </div>
+
+                    <div class="d-flex gap-3 mb-5">
+                        <a href="/projects" class="btn btn-dark px-4 py-2 rounded-pill fw-bold">VER PROYECTOS</a>
+                        <a href="/contact" class="btn btn-outline-dark px-4 py-2 rounded-pill fw-bold">CONTACTAR</a>
+                    </div>
+
+                    <div class="row g-4 py-4 border-top border-bottom mb-5">
+                        <div class="col-md-4 d-flex align-items-center">
+                            <div class="rounded-circle bg-light d-flex align-items-center justify-content-center me-3"
+                                style="width: 40px; height: 40px; border: 1px solid var(--border-gray);">
+                                <i class="bi bi-geo-alt-fill text-secondary"></i>
+                            </div>
+                            <div>
+                                <p class="mb-0 small text-muted text-uppercase fw-bold letter-spacing-1"
+                                    style="font-size: 0.65rem;">Ubicación</p>
+                                <p class="mb-0 small fw-medium">Sevilla, España</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 d-flex align-items-center">
+                            <div class="rounded-circle bg-light d-flex align-items-center justify-content-center me-3"
+                                style="width: 40px; height: 40px; border: 1px solid var(--border-gray);">
+                                <i class="bi bi-calendar-check-fill text-secondary"></i>
+                            </div>
+                            <div>
+                                <p class="mb-0 small text-muted text-uppercase fw-bold letter-spacing-1"
+                                    style="font-size: 0.65rem;">Disponibilidad</p>
+                                <p class="mb-0 small fw-medium">Inmediata</p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 d-flex align-items-center">
+                            <div class="rounded-circle bg-light d-flex align-items-center justify-content-center me-3"
+                                style="width: 40px; height: 40px; border: 1px solid var(--border-gray);">
+                                <i class="bi bi-clock-fill text-secondary"></i>
+                            </div>
+                            <div>
+                                <p class="mb-0 small text-muted text-uppercase fw-bold letter-spacing-1"
+                                    style="font-size: 0.65rem;">Jornada</p>
+                                <p class="mb-0 small fw-medium">Completa / Parcial</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <p class="text-uppercase letter-spacing-1 small fw-bold text-muted mb-3">Intereses actuales</p>
+                        <div class="d-flex flex-wrap gap-3 opacity-75">
+                            <span class="badge-tech">FullStack Developer</span>
+                            <span class="badge-tech">Backend Developer</span>
+                            <span class="badge-tech">Java & Spring Boot</span>
+                            <span class="badge-tech">SAP ABAP</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+
+</html>

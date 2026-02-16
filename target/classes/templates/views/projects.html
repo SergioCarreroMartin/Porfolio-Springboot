@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:replace="~{fragments/head :: head_links}"></div>
+</head>
+
+<body class="d-flex flex-column min-vh-100" style="background-color: #f8f9fa;">
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    <main class="container flex-fill py-5 d-flex justify-content-center">
+        <div class="sheet-container shadow-sm p-4 p-md-5 bg-white rounded-4 border" style="max-width: 1100px; width: 100%;">
+            
+            <div class="row">
+                <div class="col-12">
+                    <h1 id="proyectos" class="display-4 fw-bold mb-3" style="color: var(--primary-gray);">
+                        Proyectos<span class="text-muted">.</span>
+                    </h1>
+                    <p class="text-secondary fs-5 mb-5">
+                        Explora mis desarrollos recientes.
+                    </p>
+
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                        <div th:each="proj : ${projects}" class="col">
+                            <div class="card h-100 project-card border-0 bg-light rounded-4 overflow-hidden shadow-sm">
+                                
+                                <img th:src="${proj.imageUrl}" class="card-img-top" alt="Imagen proyecto"
+                                    style="height: 180px; object-fit: cover; filter: grayscale(20%);">
+
+                                <div class="card-body d-flex flex-column p-4">
+                                    <h5 th:text="${proj.title}" class="card-title fw-bold mb-2" style="color: #2c3e50;">Título</h5>
+                                    
+                                    <p th:text="${proj.description}" class="card-text text-muted small mb-4">Descripción</p>
+
+                                    <div class="mt-auto d-flex flex-wrap gap-2">
+                                        <span th:each="tech : ${proj.technologies}" th:text="${tech}"
+                                            class="badge-tech-card">
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer bg-transparent border-0 p-4 pt-0">
+                                    <a th:href="${proj.url}" target="_blank" class="btn btn-sm btn-dark w-100 rounded-pill fw-bold">
+                                        Ver proyecto
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-5 pt-4 border-top text-center">
+                        <p class="small text-muted mb-0">Puedes ver más detalles en mi <a href="https://github.com/SergioCarreroMartin" target="_blank" rel="noopener noreferrer" class="text-dark fw-bold text-decoration-none">GitHub</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>

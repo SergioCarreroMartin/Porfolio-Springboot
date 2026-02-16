@@ -1,0 +1,20 @@
+<nav th:fragment="navbar" class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/inicio" style="letter-spacing: 1.5px; color: #2c3e50;">
+            SERGIO<span style="color: #95a5a6;">.DEV</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link px-3" href="/projects">PROYECTOS</a>
+                <a class="nav-link px-3" href="/contact">CONTACTAR</a>
+                <a class="btn btn-outline-dark btn-sm ms-lg-3 px-4 rounded-pill navbar-nav ms-auto align-items-center" 
+                href="http://localhost:8082/docs/CV_Sergio_Carrero_Martin.pdf" download="CV_Sergio_Carrero_Martin.pdf">DESCARGAR CV</a>
+            </div>
+        </div>
+    </div>
+</nav>

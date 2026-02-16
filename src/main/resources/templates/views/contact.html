@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:replace="~{fragments/head :: head_links}"></div>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+    
+    <main class="container flex-fill py-5 d-flex justify-content-center">
+    <div class="sheet-container shadow-sm p-4 p-md-5 bg-white rounded-4 border" style="max-width: 900px; width: 100%;">
+        
+        <div class="row">
+            <div class="col-12">
+                <h1 class="display-4 fw-bold mb-3" style="color: var(--primary-gray);">
+                    Contacto<span class="text-muted">.</span>
+                </h1>
+                <p class="text-secondary fs-5 mb-5">
+                    ¿Tienes una propuesta, buscas un perfil como el mío o simplemente quieres saludar? 
+                    Escríbeme y me pondré en contacto contigo lo antes posible. Puedes encontrar más información detallada sobre mí en el CV.
+                </p>
+
+                <div th:if="${exito}" class="alert alert-success border-0 rounded-4 mb-4 p-3">
+                    <i class="bi bi-check-circle-fill me-2"></i>
+                    <span th:text="${exito}"></span>
+                </div>
+
+                <form th:action="@{/contact}" method="post" class="row g-4">
+                    <div class="col-md-6">
+                        <label class="form-label small fw-bold text-uppercase letter-spacing-1 text-muted">Nombre</label>
+                        <input type="text" name="name" class="form-control form-control-lg bg-light border-0 rounded-3 shadow-none" 
+                               placeholder="Tu nombre completo" required style="font-size: 1rem;">
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <label class="form-label small fw-bold text-uppercase letter-spacing-1 text-muted">Email</label>
+                        <input type="email" name="email" class="form-control form-control-lg bg-light border-0 rounded-3 shadow-none" 
+                               placeholder="correo@ejemplo.com" required style="font-size: 1rem;">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label small fw-bold text-uppercase letter-spacing-1 text-muted">Mensaje</label>
+                        <textarea name="menssage" class="form-control bg-light border-0 rounded-3 shadow-none" 
+                                  rows="6" placeholder="Cuéntame en qué puedo ayudarte..." required style="font-size: 1rem;"></textarea>
+                    </div>
+
+                    <div class="col-12 pt-3">
+                        <button type="submit" class="btn btn-dark w-100 py-3 fw-bold text-uppercase rounded-pill" 
+                                style="letter-spacing: 2px;">
+                            Enviar Mensaje
+                        </button>
+                    </div>
+                </form>
+
+                <div class="mt-5 pt-4 border-top text-center">
+                    <p class="small text-muted mb-0">También puedes escribirme directamente a:</p>
+                    <a href="mailto:sergio.carrero.martin@gmail.com" class="text-dark fw-bold text-decoration-none">
+                        sergio.carrero.martin@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+
+</html>
