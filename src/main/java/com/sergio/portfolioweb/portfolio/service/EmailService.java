@@ -15,12 +15,15 @@ public class EmailService {
 
     @Async
     public void sendMail(String name, String userMail, String menssage){
-        SimpleMailMessage email = new SimpleMailMessage();
-        email.setTo(MY_MAIL);
-        email.setSubject("Nuevo mensaje de contacto: "+name);
-        email.setText("De: "+name+ " <"+userMail+">\n\n" +menssage);
-        email.setReplyTo(userMail);
-
-        mailSender.send(email);
+        try {
+            SimpleMailMessage email = new SimpleMailMessage();
+            email.setTo(MY_MAIL);
+            email.setSubject("Nuevo mensaje de contacto: "+name);
+            email.setText("De: "+name+ " <"+userMail+">\n\n" +menssage);
+            email.setReplyTo(userMail);
+            mailSender.send(email);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
